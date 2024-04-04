@@ -1,0 +1,35 @@
+#dashboard-carousel {
+    width: 100vw;
+    height: 500px;
+}
+
+.dashboard-carousel-image {
+    width: 100vw;
+    height: 500px;
+}
+
+#dashboard-select-items-container {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    margin-top: 32px;
+}
+
+.dashboard-select-item {
+    text-align: center;
+    height: 300px;
+    width: 300px;
+}
+
+.limited-time-text-container {
+    display: flex;
+    justify-content: center;
+    color: red;
+    gap: 10px;
+}
+
+.limited-time-text-container p + p {
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+}
