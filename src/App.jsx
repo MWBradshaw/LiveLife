@@ -5,7 +5,7 @@ import Categories from './components/Categories/Categories';
 import Dashboard from './components/Dashboard/Dashboard.jsx';
 import Navbar from './components/Navbar/Navbar';
 import Orders from './components/Orders/Orders';
-
+import Cart from './components/Cart/Cart';
 
 function App() {
 
@@ -18,6 +18,7 @@ function App() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/categories" element={<Categories />} />
           <Route path="/orders" element={<Orders />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
       </BrowserRouter>
     </div>
