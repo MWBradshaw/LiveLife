@@ -1,8 +1,15 @@
 import React from 'react';
 import './Cart.css';
+import { useNavigate } from 'react-router-dom';  // Import useNavigate
 
 const Cart = () => {
-    return(
+    let navigate = useNavigate();  // Use the useNavigate hook
+
+    const handleCheckout = () => {
+        navigate('/checkout');  // Navigate to the checkout page using navigate
+    };
+
+    return (
         <div id="cart-page-container">
             <div id="cart-container">
                 <div id="cart-container-header">
@@ -15,7 +22,7 @@ const Cart = () => {
 
                 <div className="cart-body">
                     <div>
-                        <img src="" />
+                        <img src="" alt="Product Image" />
 
                         <div className="cart-item-name-container">
                             <p>Skechers Men's Summits High Range Hands Free Slip-in Sneaker</p>
@@ -28,7 +35,7 @@ const Cart = () => {
             <div>
                 <div id="checkout-container">
                     <p>Total Price[20 items]: $300.00</p>
-                    <button id="checkout-button">Proceed to checkout</button>
+                    <button id="checkout-button" onClick={handleCheckout}>Proceed to checkout</button>
                 </div>
 
                 <div id="recommended-container">
@@ -39,12 +46,10 @@ const Cart = () => {
                     <div>
 
                     </div>
-
-
                 </div>
             </div>
         </div>
-    )
+    );
 }
 
 export default Cart;
