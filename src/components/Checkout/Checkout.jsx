@@ -1,18 +1,14 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';  // Import useNavigate
 
 function Checkout() {
     const [creditCard, setCreditCard] = useState('');
     const [expiryDate, setExpiryDate] = useState('');
     const [cvv, setCvv] = useState('');
-    let navigate = useNavigate();  // Use the useNavigate hook
 
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log('Credit Card Info:', { creditCard, expiryDate, cvv });
         // Here, you would handle form submission, possibly sending data to a server
-        
-        navigate('/thank-you');  // Navigate to the Thank You page after submission
     };
 
     return (

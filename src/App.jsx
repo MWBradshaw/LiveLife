@@ -1,26 +1,26 @@
 import React, { createContext, useState } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import './App.css';
+import Navbar from './components/Navbar/Navbar.jsx';
+import Dashboard from './components/Dashboard/Dashboard';
 import Categories from './components/Categories/Categories';
-import Dashboard from './components/Dashboard/Dashboard.jsx';
-import Navbar from './components/Navbar/Navbar';
 import Orders from './components/Orders/Orders';
 import Cart from './components/Cart/Cart';
-<<<<<<< HEAD
 import SearchResults from './components/SearchResults/SearchResults';
+import Checkout from './components/Checkout/Checkout';  // Import the Checkout component
+import CheckoutForm from './components/CheckoutForm/CheckoutForm.jsx';  // Ensure this path is correct
+import ThankYou from './components/ThankYou/ThankYou';
+import FormComponent from './components/FormComponent/FormComponent.jsx';  // Added FormComponent import
+import Checkout from './components/Checkout/Checkout.jsx';
+import Users from './components/Users/Users.jsx'; // Import the Users component
+import CreditCardForm from './components/CreditCardForm/CreditCardForm.jsx';
+import OrderItems from './components/OrderItems/OrderItems.jsx'; // Adjust the import path according to your file structure
 
 function App() {
   const CartContext = createContext([]);
   const [cartItems, setCartItems] = useState([])
-=======
-import Checkout from './components/Checkout/Checkout';  // Import the Checkout component
-import ThankYou from './components/ThankYou/ThankYou';  // Import the Thank You component
-
+  
 function App() {
->>>>>>> a755835cbc48b352583e4eaf45051bad074c5063
-  return (
     <div>
-<<<<<<< HEAD
       <CartContext.Provider value={cartItems}>
         <BrowserRouter>
           <Navbar />
@@ -30,22 +30,13 @@ function App() {
             <Route path="/orders" element={<Orders />} />
             <Route path="/cart" element={<Cart />} />
             <Route path="/search-results" element={<SearchResults />} />
-          </Routes>
+            <Route path="/checkout" element={<Checkout />} />  // Checkout now includes CreditCardForm
+            <Route path= "/checkoutform" element={<CheckoutForm />} />
+            <Route path="/thank-you" element={<ThankYou />} />
+            <Route path="/OrderItems" element={<OrderItems />} />
+            <Route path="/search-results" element={<SearchResults />} />
         </BrowserRouter>
       </CartContext.Provider>
-=======
-      <BrowserRouter>
-        <Navbar />
-        <Routes>
-          <Route path="/" element={<Dashboard />} />
-          <Route path="/categories" element={<Categories />} />
-          <Route path="/orders" element={<Orders />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/checkout" element={<Checkout />} />
-          <Route path="/thank-you" element={<ThankYou />} />  {/* New route for Thank You page */}
-        </Routes>
-      </BrowserRouter>
->>>>>>> a755835cbc48b352583e4eaf45051bad074c5063
     </div>
   );
 }

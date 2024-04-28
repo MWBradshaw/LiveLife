@@ -1,10 +1,24 @@
 import React from 'react';
+import { useLocation } from 'react-router-dom';
 
-const ThankYou = () => {
+function ThankYou() {
+    const location = useLocation();
+    const { user, orders, items } = location.state || {};
+
     return (
-        <div style={{ textAlign: 'center', marginTop: '50px' }}>
-            <h1>Thank you for your purchase!</h1>
-            <p>Your order has been placed and is being processed.</p>
+        <div>
+            <h1>Thank You, {user?.UserName}!</h1>
+            <h2>Your Orders:</h2>
+            {orders?.map(order => (
+                <div key={order.OrderID}>
+                    <p>Order ID: {order.OrderID}, Shipping: {order.ShippingAddress}</p>
+                    <ul>
+                        {items?.filter(item => item.OrderID === order.OrderID).map(item => (
+                            <li key={item.ItemID}>{item.ItemName} (Quantity: {item.Quantity})</li>
+                        ))}
+                    </ul>
+                </div>
+            ))}
         </div>
     );
 }
