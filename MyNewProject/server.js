@@ -1,4 +1,5 @@
 const express = require('express');
+const CreditCard = require('./routes/CreditCard.js')
 const mysql = require('mysql2');
 const cors = require('cors');
 
@@ -6,6 +7,7 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+app.use("/CreditCard",CreditCardroute);
 
 const db = mysql.createConnection({
     host: 'localhost',
@@ -22,7 +24,7 @@ db.connect(err => {
     console.log('connected as id ' + db.threadId);
 });
 
-// Define a route for the root URL
+//Define a route for the root URL
 app.get('/', (req, res) => {
     res.send('Welcome to the LiveLife API!');
 });
@@ -38,6 +40,20 @@ app.get('/api/users', (req, res) => {
         res.json(results);
     });
 });
+// Define a route to fetch credit card data
+// Define a route to fetch order items data
+app.get('/api/orderitems', (req, res) => {
+    db.query('SELECT * FROM OrderItems', (err, results) => {
+        if (err) {
+            console.error('Error fetching order items from database:', err);
+            res.status(500).send('Error fetching order items from database');
+            return;
+        }
+        res.json(results);
+    });
+});
+
+
 
 // Dummy endpoint for payment processing
 app.post('/process-payment', (req, res) => {

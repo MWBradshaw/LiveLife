@@ -4,9 +4,9 @@ const url = 'https://real-time-amazon-data.p.rapidapi.com/search?query=Phone&pag
 const options = {
 	method: 'GET',
 	headers: {
-		'X-RapidAPI-Key': 'c78ae4dfe7msheb0295c0d413df2p16b2c0jsn7e73dbe83f69',
+		'X-RapidAPI-Key': '39a603c7afmsh16537831fb0237fp1cd426jsn65962774609a',
 		'X-RapidAPI-Host': 'real-time-amazon-data.p.rapidapi.com'
-	}
+	  }
 };
 
 try {

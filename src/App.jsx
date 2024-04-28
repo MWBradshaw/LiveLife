@@ -10,7 +10,8 @@ import ThankYou from './components/ThankYou/ThankYou';
 import FormComponent from './components/FormComponent/FormComponent.jsx';  // Added FormComponent import
 import Checkout from './components/Checkout/Checkout.jsx';
 import Users from './components/Users/Users.jsx'; // Import the Users component
-
+import CreditCardForm from './components/CreditCardForm/CreditCardForm.jsx';
+import OrderItems from './components/OrderItems/OrderItems.jsx'; // Adjust the import path according to your file structure
 function App() {
   return (
     <div>
@@ -22,8 +23,11 @@ function App() {
           <Route path="/categories" element={<Categories />} />
           <Route path="/orders" element={<Orders />} />
           <Route path="/cart" element={<Cart />} />
-          <Route path="/checkout" element={<CheckoutForm />} />  // Checkout now includes CreditCardForm
+          <Route path="/checkout" element={<Checkout />} />  // Checkout now includes CreditCardForm
+          <Route path= "/checkoutform" element={<CheckoutForm />} />
           <Route path="/thank-you" element={<ThankYou />} />
+          <Route path="/OrderItems" element={<OrderItems />} />
+
         </Routes>
       </BrowserRouter>
     </div>
