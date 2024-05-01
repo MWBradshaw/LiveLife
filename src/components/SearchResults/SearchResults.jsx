@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import './SearchResults.css';
 
 const SearchResults = () => {
@@ -26,7 +26,9 @@ const SearchResults = () => {
                                     <p>Price:</p>
                                     <p>{item.product_price} {item.currency}</p>
                                 </div>
-                                <p>Add to Cart</p>
+                                <Link to="/cart">
+                                    <p>Add to Cart</p>
+                                </Link>
                             </div>
                         </div>
 
